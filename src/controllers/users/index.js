@@ -1,0 +1,8 @@
+module.exports.insert = require('./insert')
+module.exports.get = require('./get')
+module.exports.find = require('./find')
+module.exports.update = require('./update')
+module.exports.delete = require('./delete')
+module.exports.login = require('./login')
+module.exports.forgotPassword = require('./forgot-password')
+module.exports.resetPassword = require('./reset-password')
