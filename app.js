@@ -41,7 +41,18 @@ app.set('view engine', 'ejs');
 //   })
 // }
 
+// connect to DB
 if (process.env.NODE_ENV === 'production') {
+  // const connection = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`
+  const connection = `mongodb+srv://oharabimbelofficial:O'hara4424@cluster0.6vgx6ub.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+  mongoose.connect(connection, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+  let db = mongoose.connection
+
+  db.on('error', console.error.bind(console, 'Database connect Error!'))
+  db.once('open', () => {
+  console.log('Database Atlas is Connected')
+  })
+} else {
   mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
   let db = mongoose.connection
 

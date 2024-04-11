@@ -1,29 +1,16 @@
 const Users = require('../../models/users')
 
 module.exports = async (req, res) => {
-  const { username, name, nik, email, phoneNumber, address, gender, position, placement, status, page, limit, sort } = req.query
+  // const { username, name, nik, email, phoneNumber, address, gender, position, placement, status, page, limit, sort } = req.query
+  const { username, email, status, page, limit, sort } = req.query
   let query = {
     username: { '$regex': '' },
-    name: { '$regex': '' },
-    nik: { '$regex': '' },
     email: { '$regex': '' },
-    phoneNumber: { '$regex': '' },
-    address: { '$regex': '' },
-    gender: { '$regex': '' },
-    position: { '$regex': '' },
-    placement: { '$regex': '' },
     status: { '$regex': '' }
   }
 
   if (username) { query.username = {'$regex': username}}
-  if (name) { query.name = {'$regex': name.toUpperCase()}}
-  if (nik) { query.nik = {'$regex': nik}}
   if (email) { query.email = {'$regex': email}}
-  if (phoneNumber) { query.phoneNumber = {'$regex': phoneNumber}}
-  if (address) { query.address = {'$regex': address}}
-  if (gender) { query.gender = {'$regex': gender.toUpperCase()}}
-  if (position) { query.position = {'$regex': position.toUpperCase()}}
-  if (placement) { query.placement = {'$regex': placement.toUpperCase()}}
   if (status) { query.status = {'$regex': status}}
 
   let options = {

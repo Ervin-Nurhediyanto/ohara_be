@@ -5,7 +5,8 @@ const { verifyAccess } = require('../middlewares/auth')
 const { upload } = require('../middlewares/multer')
 
 router
-  .get('/', verifyAccess, controller.get)
+  // .get('/', verifyAccess, controller.get)
+  .get('/', controller.get)
   .get('/:id', verifyAccess, controller.find)
   .post('/register/:role', controller.insert)
   .post('/login', controller.login)
