@@ -6,6 +6,7 @@ const { verifyAccess } = require('../middlewares/auth')
 router
   .post('/', controller.insert)
   .get('/', controller.get)
+  .get('/:id', controller.find)
   .patch('/:id', verifyAccess, controller.update)
   .delete('/:id', verifyAccess, controller.delete)
 
