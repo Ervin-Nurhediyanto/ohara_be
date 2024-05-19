@@ -1,7 +1,7 @@
 const express = require('express')
 const userRouters = require('./users')
 const roleRouters = require('./roles')
-const tokenizerRouters = require('./tokenizer')
+// const tokenizerRouters = require('./tokenizer')
 
 // const attendanceRouters = require('./attendance')
 // const positionRouters = require('./positions')
@@ -14,7 +14,7 @@ const router = express.Router()
 router
   .use('/roles', roleRouters)
   .use('/users', userRouters)
-  .use('/tokenizers', tokenizerRouters)
+  // .use('/tokenizers', tokenizerRouters)
 
   // .use('/attendance', attendanceRouters)
   // .use('/positions', positionRouters)
