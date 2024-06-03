@@ -7,12 +7,12 @@ const { upload } = require('../middlewares/multer')
 router
   // .get('/', verifyAccess, controller.get)
   .get('/', controller.get)
-  .get('/:id', verifyAccess, controller.find)
+  .get('/:id', controller.find)
   .post('/register/:role', controller.insert)
   .post('/login', controller.login)
   .post('/forgot-password', controller.forgotPassword)
   .post('/reset-password/:id', controller.resetPassword)
-  .patch('/:id', verifyAccess, upload, controller.update)
-  .delete('/:id', verifyAccess, controller.delete)
+  .patch('/:id', upload, controller.update)
+  .delete('/:id', controller.delete)
 
 module.exports = router
