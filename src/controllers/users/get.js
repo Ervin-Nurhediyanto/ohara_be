@@ -2,7 +2,7 @@ const Users = require('../../models/users')
 
 module.exports = async (req, res) => {
   // const { username, name, nik, email, phoneNumber, address, gender, position, placement, status, page, limit, sort } = req.query
-  const { username, email, status, roleId, page, limit, sort } = req.query
+  const { username, email, status, roleId, mapel, page, limit, sort } = req.query
   let query = {
     username: { '$regex': '' },
     email: { '$regex': '' },
