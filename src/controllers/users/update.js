@@ -4,7 +4,7 @@ const path = require('path')
 
 module.exports = async (req, res) => {
   const id = req.params.id
-  const { username, name, nik, email, mapel, phoneNumber, address, gender, position, placement, status } = req.body
+  const { username, name, nik, email, mapel, phoneNumber, address, gender, status } = req.body
 
   try {
     let data = {}
@@ -17,8 +17,6 @@ module.exports = async (req, res) => {
     if (phoneNumber) { data.phoneNumber = phoneNumber }
     if (address) { data.address = address }
     if (gender) { data.gender = gender }
-    if (position) { data.position = position }
-    if (placement) { data.placement = placement }
     if (status) { data.status = status }
 
     // Path dir
