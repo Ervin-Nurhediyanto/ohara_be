@@ -29,22 +29,22 @@ module.exports = async (req, res) => {
     pathDir = dir.join('')
 
     // Old file
-    const collection = await Users.findOne({ _id: id })
-    const fileName = collection.image.split(process.env.BASE_URL + 'uploads')[1]
-    const filePath = pathDir + '/uploads/' + fileName;
+    // const collection = await Users.findOne({ _id: id })
+    // const fileName = collection.image.split(process.env.BASE_URL + 'uploads')[1]
+    // const filePath = pathDir + '/uploads/' + fileName;
 
     if (req.files.length > 0) {
-      // Delete old file
-      if (fileName !== undefined) {
-        fs.unlinkSync(filePath);
-      }
+      // // Delete old file
+      // if (fileName !== undefined) {
+      //   fs.unlinkSync(filePath);
+      // }
 
       // Update new file
       data.image = req.files.map((item) => {
         return process.env.BASE_URL + 'uploads/' + item.filename
       }).join()
     } else {
-      data.image = collection.image
+      // data.image = collection.image
     }
 
     const userUpdate = await Users.updateOne({_id: id}, data)
