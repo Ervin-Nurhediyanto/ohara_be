@@ -2,16 +2,18 @@ const Users = require('../../models/users')
 
 module.exports = async (req, res) => {
   // const { username, name, nik, email, phoneNumber, address, gender, position, placement, status, page, limit, sort } = req.query
-  const { username, email, status, page, limit, sort } = req.query
+  const { username, email, status, roleId, page, limit, sort } = req.query
   let query = {
     username: { '$regex': '' },
     email: { '$regex': '' },
-    status: { '$regex': '' }
+    status: { '$regex': '' },
+    roleId: { '$regex': '' }
   }
 
   if (username) { query.username = {'$regex': username}}
   if (email) { query.email = {'$regex': email}}
   if (status) { query.status = {'$regex': status}}
+  if (roleId) { query.roleId = {'$regex': roleId}}
 
   let options = {
     sort: {
