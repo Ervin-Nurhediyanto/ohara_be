@@ -1,7 +1,21 @@
 const express = require('express')
-const userRouters = require('./users')
 const roleRouters = require('./roles')
-// const tokenizerRouters = require('./tokenizer')
+const userRouters = require('./users')
+const productRouters = require('./products')
+const packetRouters = require('./packets')
+// const financeRouters = require('./finances')
+// const scheduleRouters = require('./schedules')
+// const moduleRouters = require('./modules')
+
+const router = express.Router()
+
+router
+  .use('/roles', roleRouters)
+  .use('/users', userRouters)
+  .use('/products', productRouters)
+  .use('/packets', packetRouters)
+
+module.exports = router
 
 // const attendanceRouters = require('./attendance')
 // const positionRouters = require('./positions')
@@ -9,17 +23,8 @@ const roleRouters = require('./roles')
 // const informationRouters = require('./information')
 // const shiftRouters = require('./shifts')
 
-const router = express.Router()
-
-router
-  .use('/roles', roleRouters)
-  .use('/users', userRouters)
-  // .use('/tokenizers', tokenizerRouters)
-
-  // .use('/attendance', attendanceRouters)
-  // .use('/positions', positionRouters)
-  // .use('/placements', placementRouters)
-  // .use('/informations', informationRouters)
-  // .use('/shifts', shiftRouters)
-
-module.exports = router
+// .use('/attendance', attendanceRouters)
+// .use('/positions', positionRouters)
+// .use('/placements', placementRouters)
+// .use('/informations', informationRouters)
+// .use('/shifts', shiftRouters)
