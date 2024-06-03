@@ -4,7 +4,7 @@ const path = require('path')
 
 module.exports = async (req, res) => {
   const id = req.params.id
-  const { username, name, nik, email, phoneNumber, address, gender, position, placement, status } = req.body
+  const { username, name, nik, email, mapel, phoneNumber, address, gender, position, placement, status } = req.body
 
   try {
     let data = {}
@@ -13,6 +13,7 @@ module.exports = async (req, res) => {
     if (name) { data.name = name.toUpperCase() }
     if (nik) { data.nik = nik }
     if (email) { data.email = email }
+    if (mapel) { data.mapel = mapel }
     if (phoneNumber) { data.phoneNumber = phoneNumber }
     if (address) { data.address = address }
     if (gender) { data.gender = gender }

@@ -7,13 +7,15 @@ module.exports = async (req, res) => {
     username: { '$regex': '' },
     email: { '$regex': '' },
     status: { '$regex': '' },
-    roleId: { '$regex': '' }
+    roleId: { '$regex': '' },
+    mapel: { '$regex': '' }
   }
 
   if (username) { query.username = {'$regex': username}}
   if (email) { query.email = {'$regex': email}}
   if (status) { query.status = {'$regex': status}}
   if (roleId) { query.roleId = {'$regex': roleId}}
+  if (mapel) { query.mapel = {'$regex': mapel}}
 
   let options = {
     sort: {

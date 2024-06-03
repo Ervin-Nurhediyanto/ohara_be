@@ -19,6 +19,7 @@ module.exports = async (req, res) => {
       phoneNumber: '',
       address: '',
       gender: '',
+      mapel: '',
       // gender: gender.toUpperCase(),
       // position,
       // placement,

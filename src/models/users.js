@@ -23,6 +23,9 @@ const usersSchema = mongoose.Schema({
     unique : true,
     required: true
   },
+  mapel: {
+    type: String
+  },
   phoneNumber: {
     type: String
     // required: true
