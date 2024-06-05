@@ -4,7 +4,7 @@ const userRouters = require('./users')
 const productRouters = require('./products')
 const packetRouters = require('./packets')
 const financeRouters = require('./finances')
-// const scheduleRouters = require('./schedules')
+const scheduleRouters = require('./schedules')
 // const moduleRouters = require('./modules')
 
 const router = express.Router()
@@ -15,6 +15,7 @@ router
   .use('/products', productRouters)
   .use('/packets', packetRouters)
   .use('/finances', financeRouters)
+  .use('/schedules', scheduleRouters)
 
 module.exports = router
 
