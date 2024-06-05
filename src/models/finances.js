@@ -21,7 +21,7 @@ const financesSchema = mongoose.Schema({
     type: String
   },
   datePay: {
-    type: Date
+    type: String
   },
   createdAt: {
     type: Date,

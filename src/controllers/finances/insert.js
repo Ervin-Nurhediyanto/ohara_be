@@ -10,7 +10,8 @@ module.exports = async (req, res) => {
       productName,
       price,
       status,
-      image: ''
+      image: '',
+      datePay: ''
     }
 
     const newPacket = new Finances(data)

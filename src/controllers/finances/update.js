@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = async (req, res) => {
   const id = req.params.id
-  const { userId, productId, productName, price, status } = req.body
+  const { userId, productId, productName, price, status, datePay } = req.body
 
   try {
     let data = {}
@@ -13,6 +13,7 @@ module.exports = async (req, res) => {
     if (productName) { data.productName = productName }
     if (price) { data.price = price }
     if (status) { data.status = status }
+    if (datePay) { data.datePay = datePay }
 
     // Path dir
     const pathObj = path.parse(__dirname)
