@@ -1,16 +1,18 @@
 const Finances = require('../../models/finances')
 
 module.exports = async (req, res) => {
-  const { userId, productId, price, status, page, limit, sort } = req.query
+  const { userId, productId, productName, price, status, page, limit, sort } = req.query
   let query = {
     userId: { '$regex': '' },
     productId: { '$regex': '' },
+    productName: { '$regex': '' },
     price: { '$regex': '' },
     status: { '$regex': '' }
   }
 
   if (userId) { query.userId = {'$regex': userId}}
   if (productId) { query.productId = {'$regex': productId}}
+  if (productName) { query.productName = {'$regex': productName}}
   if (price) { query.status = {'$regex': price}}
   if (status) { query.status = {'$regex': status}}
 

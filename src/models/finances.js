@@ -8,6 +8,9 @@ const financesSchema = mongoose.Schema({
   productId: {
     type: String
   },
+  productName: {
+    type: String
+  },
   price: {
     type: String
   },

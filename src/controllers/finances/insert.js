@@ -1,12 +1,13 @@
 const Finances = require('../../models/finances')
 
 module.exports = async (req, res) => {
-  const { userId, productId, price, status } = req.body
+  const { userId, productId, productName, price, status } = req.body
 
   try {
     const data = {
       userId,
       productId,
+      productName,
       price,
       status,
       image: ''
