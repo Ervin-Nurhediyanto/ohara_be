@@ -5,7 +5,9 @@ const productRouters = require('./products')
 const packetRouters = require('./packets')
 const financeRouters = require('./finances')
 const scheduleRouters = require('./schedules')
-// const moduleRouters = require('./modules')
+const classRouters = require('./classes')
+const presenceRouters = require('./presences')
+const moduleRouters = require('./modules')
 
 const router = express.Router()
 
@@ -16,6 +18,9 @@ router
   .use('/packets', packetRouters)
   .use('/finances', financeRouters)
   .use('/schedules', scheduleRouters)
+  .use('/classes', classRouters)
+  .use('/presences', presenceRouters)
+  .use('/modules', moduleRouters)
 
 module.exports = router
 
