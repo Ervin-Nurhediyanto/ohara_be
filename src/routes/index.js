@@ -3,7 +3,7 @@ const roleRouters = require('./roles')
 const userRouters = require('./users')
 const productRouters = require('./products')
 const packetRouters = require('./packets')
-// const financeRouters = require('./finances')
+const financeRouters = require('./finances')
 // const scheduleRouters = require('./schedules')
 // const moduleRouters = require('./modules')
 
@@ -14,6 +14,7 @@ router
   .use('/users', userRouters)
   .use('/products', productRouters)
   .use('/packets', packetRouters)
+  .use('/finances', financeRouters)
 
 module.exports = router
 
