@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
 
     if (name) { data.name = name.toUpperCase() }
     if (description) { data.description = description }
-    if (points) { data.points = points }
+    if (points) { data.points = points.split(',') }
     if (mapel) { data.mapel = mapel }
     if (grade) { data.grade = grade }
     if (price) { data.price = price }

@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
     const data = {
       name,
       description,
-      points: points || [],
+      points: points.split(',') || [],
       image: '',
       mapel: '',
       grade: '',
