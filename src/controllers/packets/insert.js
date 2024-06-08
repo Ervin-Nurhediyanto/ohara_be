@@ -1,13 +1,13 @@
 const Packets = require('../../models/packets')
 
 module.exports = async (req, res) => {
-  const { name, description, productId } = req.body
+  const { name, description, points, productId } = req.body
 
   try {
     const data = {
       name,
       description,
-      points: [],
+      points: points || [],
       image: '',
       mapel: '',
       grade: '',
