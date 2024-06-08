@@ -4,13 +4,13 @@ const path = require('path')
 module.exports = async (req, res) => {
   const id = req.params.id
   const { name, description, points, mapel, grade, price, productId } = req.body
-
+  console.log('points', points)
   try {
     let data = {}
 
     if (name) { data.name = name.toUpperCase() }
     if (description) { data.description = description }
-    if (points) { data.points = points.split(',') }
+    if (points) { data.points = points }
     if (mapel) { data.mapel = mapel }
     if (grade) { data.grade = grade }
     if (price) { data.price = price }
